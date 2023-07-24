@@ -1,35 +1,60 @@
-.headerWrapper{
-    margin-bottom: 1.5rem;
-    border: 1px solid blue;
-}
-
-.headerWrapper > div{
-    border: 1px solid black;
+.headerWrapper {
     margin-bottom: 1.5rem;
 }
 
-.teste1{
-    border: 1px solid black; 
+.headerWrapper>div {
+    margin-bottom: 1.5rem;
 }
 
-.teste2{
-    border: 1px solid red;
-   /*  display: flex;*/
-
+.col1 {
+    padding-top: 0.5rem;
 }
 
-.headerWrapper .col2{
-    border: 1px solid red;
+.col2 {
     text-align: center;
 }
 
-.headerWrapper .col3{
-    border: 1px solid red;
-    text-align: end;
+.col3 {
+    display: flex;
+    justify-content: flex-end;
 }
 
-.teste3{
+.buttonWrapper {
+    display: flex;
+    align-items: baseline;
+    border: none;
+    background: none;
+}
+
+.buttonWrapper:hover {
+    background-color: #fa4251;
+}
+
+.cartText {
+    margin-left: 0.5rem;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.teste3 {
     border: 1px solid blue;
-   /*  display: flex;
+    /*  display: flex;
     justify-content: center; */
+}
+
+@media screen and (max-width: 992px) {
+    .col2 {
+        text-align: start;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .col2 {
+        text-align: center;
+        margin-bottom: 1.2rem;
+    }
+    .col3 {
+        justify-content: center;
+    }
 }
