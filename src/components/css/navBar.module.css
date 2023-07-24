@@ -1,0 +1,15 @@
+.navBarWrapper{
+    background-color: #525252;
+}
+
+.navCollapse{
+    justify-content: space-around;
+}
+
+.navLinkWrapper a{
+    margin: 0.5rem;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+}

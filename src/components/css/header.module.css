@@ -1,0 +1,35 @@
+.headerWrapper{
+    margin-bottom: 1.5rem;
+    border: 1px solid blue;
+}
+
+.headerWrapper > div{
+    border: 1px solid black;
+    margin-bottom: 1.5rem;
+}
+
+.teste1{
+    border: 1px solid black; 
+}
+
+.teste2{
+    border: 1px solid red;
+   /*  display: flex;*/
+
+}
+
+.headerWrapper .col2{
+    border: 1px solid red;
+    text-align: center;
+}
+
+.headerWrapper .col3{
+    border: 1px solid red;
+    text-align: end;
+}
+
+.teste3{
+    border: 1px solid blue;
+   /*  display: flex;
+    justify-content: center; */
+}
