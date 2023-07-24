@@ -36,12 +36,6 @@
     color: #fff;
 }
 
-.teste3 {
-    border: 1px solid blue;
-    /*  display: flex;
-    justify-content: center; */
-}
-
 @media screen and (max-width: 992px) {
     .col2 {
         text-align: start;

@@ -1,0 +1,46 @@
+.footerWrapper {
+    background-color: #525252;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+    color: white;
+}
+
+
+.footerWrapper ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footerWrapper ul li {
+    padding-top: 0.7em;
+    color: #9a9a9a;
+}
+
+.followTitle {
+    text-transform: uppercase;
+}
+
+.followText {
+    color: #9a9a9a;
+}
+
+.information {
+    margin-top: 5.5rem;
+}
+
+.information .title {
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 992px) {
+    .col{
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footerWrapper {
+        text-align: center;
+    }
+}

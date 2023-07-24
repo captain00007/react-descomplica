@@ -3,13 +3,14 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import styles from "./css/buttonInput.module.css"
 
-const SearchInput = ({ label, placeHolder, style }) => {
+const SearchInput = ({ label, placeHolder, style, height="auto" }) => {
   return (
     <InputGroup className="mb-3">
       <Form.Control
         aria-label="Example text with button addon"
         aria-describedby="basic-addon1"
         placeholder={placeHolder}
+        style={{height: height}}
         className={styles.buttonInput}
       />
       <Button className={styles.buttonInput} style={style} id="button-addon1">

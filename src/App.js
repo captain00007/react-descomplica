@@ -1,17 +1,57 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/pages/Home";
-import Products from "./components/pages/Products"
-import Cart from "./components/pages/Cart"
+import Header from "./components/Header";
+import Products from "./components/pages/Products";
+import Cart from "./components/pages/Cart";
+import Footer from "./components/Footer";
 
 function App() {
+  const items = [
+    {
+      title: "Information",
+      data: [
+        "About Us",
+        "Delivery Information",
+        "Privacy Policy",
+        "Terms & Conditions",
+        "Contact Us",
+      ],
+    },
+    {
+      title: "Services",
+      data: ["Returns", "Site Map", "Wish List", "My Account", "Order History"],
+    },
+    {
+      title: "Extras",
+      data: [
+        "Brands",
+        "Gift Certificates",
+        "Affiliates",
+        "Specials",
+        "Newsletter",
+      ],
+    },
+    {
+      title: "Contacts",
+      data: [
+        "Warehouse & Offices",
+        "12345 Street name, California USA",
+        "(+024) 666 888",
+        "yourid@domain.com",
+        "www.yoursite.com",
+      ],
+    },
+  ];
   return (
     <BrowserRouter>
       <div className="App">
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="My products" element={<Products />} />
           <Route path="My purchases" element={<Cart />} />
-        </Routes> 
+        </Routes>
+        <Footer items={items}/>
       </div>
     </BrowserRouter>
   );
