@@ -32,8 +32,8 @@ const Footer = ({ items = [] }) => {
             <Col className={styles.col} sm={6} lg={3} key={index}>
               <h3 className={styles.title}>{e.title}</h3>
               <ul>
-                {e.data.map((el) => (
-                  <li>{el}</li>
+                {e.data.map((el, elIndex) => (
+                  <li key={elIndex}>{el}</li>
                 ))}
               </ul>
             </Col>

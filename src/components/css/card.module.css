@@ -1,0 +1,18 @@
+.cardAboutWrapper{
+    background: none;
+}
+
+.cardAboutWrapper .cardBody {
+    color: #9a9a9a;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.cardAboutWrapper .cardTitle{
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.cardAboutWrapper .cardText{
+    margin-top: 1.5em;
+}
