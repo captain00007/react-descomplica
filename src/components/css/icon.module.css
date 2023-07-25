@@ -1,0 +1,14 @@
+.iconWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    background-color: #dfdfdf;
+    margin: 5px;
+}
+
+.iconWrapper:hover {
+    background-color: #fa4251;
+}
+
