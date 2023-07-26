@@ -33,8 +33,8 @@ const Team = () => {
       <Container>
         <Row>
           {items.map((e, index) => (
-            <Col>
-              <Card key={index} items={e} width="18rem" icon={true}></Card>
+            <Col key={index} className={styles.col}>
+              <Card  items={e} width="18rem" icon={true}></Card>
             </Col>
           ))}
         </Row>

@@ -7,3 +7,18 @@
 .teamTitle{
     text-transform: uppercase;
 }
+
+.col{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .teamWrapper{
+        margin-bottom: 1.5rem;
+    }
+    .col{
+        margin-bottom: 1.5rem;
+    }
+}

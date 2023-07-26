@@ -1,4 +1,4 @@
-.cardAboutWrapper{
+.cardAboutWrapper {
     background: none;
 }
 
@@ -8,11 +8,17 @@
     margin-top: 1.5rem;
 }
 
-.cardAboutWrapper .cardTitle{
+.cardAboutWrapper .cardTitle {
     text-transform: uppercase;
     font-weight: 500;
 }
 
-.cardAboutWrapper .cardText{
+.cardAboutWrapper .cardText {
     margin-top: 1.5em;
+}
+
+@media screen and (max-width: 768px) {
+    .cardAboutWrapper .cardBody {
+        text-align: center;
+    }
 }

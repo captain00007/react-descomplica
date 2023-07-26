@@ -42,5 +42,11 @@
 @media screen and (max-width: 768px) {
     .footerWrapper {
         text-align: center;
+        padding-top: 1.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .information {
+        margin-top: 1.5rem;
     }
 }
