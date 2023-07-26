@@ -1,8 +1,13 @@
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import styles from "../css/cart.module.css"
+
 const Cart = () => {
   return (
-    <div>
-      <h1>My Purchases</h1>
-    </div>
+    <Container className={styles.cartWrapper}>
+      <h1>My purchases</h1>
+    </Container>
   );
 };
 

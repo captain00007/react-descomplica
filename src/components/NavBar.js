@@ -3,7 +3,8 @@ import Nav from "react-bootstrap/Nav";
 import NavBarBS from "react-bootstrap/Navbar";
 import styles from "./css/navBar.module.css";
 
-const NavBar = ({ items = [] }) => {
+const NavBar = ({ items = []}) => {
+
   return (
     <Container className={styles.navBarWrapper}>
       <NavBarBS expand="lg">

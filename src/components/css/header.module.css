@@ -37,6 +37,9 @@
     color: #fff;
 }
 
+.purchaseButton{
+    text-decoration: none;
+}
 @media screen and (max-width: 992px) {
     .col2 {
         text-align: start;

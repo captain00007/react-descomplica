@@ -42,7 +42,7 @@ const Products = () => {
       <Container>
         <Row>
           {items.map((e, index) => (
-            <Col key={index}>
+            <Col sm={6} lg={3} className={styles.col} key={index}>
               <Card
                 items={e}
               />

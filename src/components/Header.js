@@ -1,20 +1,23 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import SearchInput from "./SearchInput";
 import NavBar from "./NavBar";
 import styles from "./css/header.module.css";
 import logo from "../images/logo.png";
+import { useAppContext } from "../App";
 
 const Header = () => {
+  const value = useAppContext()
   const links = [
     { label: "Home", link: "#" },
-    { label: "Products", link: "#" },
-    { label: "About us", link: "#" },
-    { label: "Our team", link: "#" },
-    { label: "Contact us", link: "#" },
+    { label: "Products", link: "#products" },
+    { label: "About us", link: "#about" },
+    { label: "Our team", link: "#team" },
+    { label: "Contact us", link: "#contact" },
   ];
 
   return (
@@ -28,20 +31,23 @@ const Header = () => {
           />
         </Col>
         <Col sm={12} md={6} lg={6} className={styles.col2}>
-          <div>
-            <a href="#">
-              <img src={logo} alt="Company logo" />
-            </a>
-          </div>
+          <Link to="/">
+            <img src={logo} alt="Company logo" />
+          </Link>
         </Col>
         <Col sm={12} md={6} lg={3} className={styles.col3}>
-          <button className={styles.buttonWrapper}>
-            <FontAwesomeIcon style={{ color: "white" }} icon={faCartShopping} />
-            <div>
-              <h5 className={styles.cartText}>Shopping Cart</h5>
-              <p style={{ color: "white" }}>Items ({0}) </p>
-            </div>
-          </button>
+          <Link to="my_purchases" className={styles.purchaseButton}>
+            <button className={styles.buttonWrapper}>
+              <FontAwesomeIcon
+                style={{ color: "white" }}
+                icon={faCartShopping}
+              />
+              <div>
+                <h5 className={styles.cartText}>Shopping Cart</h5>
+                <p style={{ color: "white" }}>Items ({value.cartQtd}) </p>
+              </div>
+            </button>
+          </Link>
         </Col>
       </Row>
       <NavBar items={links} />

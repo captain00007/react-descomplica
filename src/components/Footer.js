@@ -4,7 +4,43 @@ import Col from "react-bootstrap/Col";
 import SearchInput from "./SearchInput";
 import styles from "./css/footer.module.css";
 
-const Footer = ({ items = [] }) => {
+const Footer = () => {
+  const items = [
+    {
+      title: "Information",
+      data: [
+        "About Us",
+        "Delivery Information",
+        "Privacy Policy",
+        "Terms & Conditions",
+        "Contact Us",
+      ],
+    },
+    {
+      title: "Services",
+      data: ["Returns", "Site Map", "Wish List", "My Account", "Order History"],
+    },
+    {
+      title: "Extras",
+      data: [
+        "Brands",
+        "Gift Certificates",
+        "Affiliates",
+        "Specials",
+        "Newsletter",
+      ],
+    },
+    {
+      title: "Contacts",
+      data: [
+        "Warehouse & Offices",
+        "12345 Street name, California USA",
+        "(+024) 666 888",
+        "yourid@domain.com",
+        "www.yoursite.com",
+      ],
+    },
+  ];
   return (
     <Container fluid className={styles.footerWrapper}>
       <Container>
