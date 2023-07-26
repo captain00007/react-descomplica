@@ -20,7 +20,7 @@ const Footer = ({ items = [] }) => {
               <SearchInput
                 label="Subscribe"
                 placeHolder="Enter your email"
-                style={{ backgroundColor: "black" }}
+                style={{ backgroundColor: "#fa4251" }}
                 height="60px"
               />
             </div>

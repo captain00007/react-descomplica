@@ -4,7 +4,7 @@ import styles from "./css/card.module.css";
 
 const Card = ({ items, width = "auto", icon=false }) => {
   return (
-    <CardBS style={{ width: width }} className={styles.cardAboutWrapper}>
+    <CardBS style={{ width: width }} className={styles.cardWrapper}>
       <CardBS.Img variant="top" src={items.image} />
       <CardBS.Body className={styles.cardBody}>
         <CardBS.Title className={styles.cardTitle}>{items.title}</CardBS.Title>
