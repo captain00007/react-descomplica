@@ -13,3 +13,24 @@
     justify-content: center;
     margin-bottom: 1.5rem;
 }
+
+.notificationWrapper {
+    background-color: #fa4251;
+    color: white;
+    width: 20vw;
+    text-align: center;
+    left: 4.5rem;
+    right: 4.5rem;
+    position: fixed;
+    z-index: 1;
+}
+
+.notificationWrapper p {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+@media screen and (max-width: 768px) {
+    .notificationWrapper {
+        width: auto;
+    }
+}

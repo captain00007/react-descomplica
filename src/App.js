@@ -1,24 +1,21 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState, createContext, useContext } from "react";
 import Header from "./components/Header";
-import Home from "./components/pages/Home";
-import Cart from "./components/pages/Cart";
+import Home from "./pages/Home";
+import Cart from "./pages/Cart";
 import Footer from "./components/Footer";
+import AppContext from "./store/AppContext";
 
-const AppContext = createContext();
-export const useAppContext = () => useContext(AppContext);
 function App() {
-  const [cartQtd, setCartQtd] = useState(0);
   return (
     <BrowserRouter>
       <div className="App">
-        <AppContext.Provider value={{ cartQtd, setCartQtd }}>
+        <AppContext>
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="my_purchases" element={<Cart />} />
           </Routes>
-        </AppContext.Provider>
+        </AppContext>
         <Footer />
       </div>
     </BrowserRouter>

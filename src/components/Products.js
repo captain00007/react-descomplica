@@ -1,7 +1,9 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Alert from "react-bootstrap/Alert";
 import Card from "./CardProduct";
+import { useState } from "react";
 import styles from "./css/products.module.css";
 import Image1 from "../images/product_1.jpg";
 import Image2 from "../images/product_2.jpg";
@@ -9,6 +11,7 @@ import Image3 from "../images/product_3.jpg";
 import Image4 from "../images/product_4.jpg";
 
 const Products = () => {
+  const [showNotif, setShowNotif] = useState(false);
   const items = [
     {
       image: Image1,
@@ -36,21 +39,33 @@ const Products = () => {
     },
   ];
   return (
-    <Container className={styles.productsWrapper}>
-      <h2 className={styles.productsTitle}>Products</h2>
-      <hr />
-      <Container>
-        <Row>
-          {items.map((e, index) => (
-            <Col sm={6} lg={3} className={styles.col} key={index}>
-              <Card
-                items={e}
-              />
-            </Col>
-          ))}
-        </Row>
+    <>
+      {showNotif && (
+        <Container className={styles.notificationWrapper}>
+          <Alert
+            variant="succes"
+            onClose={() => setShowNotif(false)}
+            dismissible
+          >
+            <p>Product added to cart</p>
+          </Alert>
+        </Container>
+      )}
+
+      <Container className={styles.productsWrapper}>
+        <h2 className={styles.productsTitle}>Products</h2>
+        <hr />
+        <Container>
+          <Row>
+            {items.map((e, index) => (
+              <Col sm={6} lg={3} className={styles.col} key={index}>
+                <Card items={e} setShowNotif={setShowNotif} />
+              </Col>
+            ))}
+          </Row>
+        </Container>
       </Container>
-    </Container>
+    </>
   );
 };
 

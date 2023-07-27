@@ -8,7 +8,7 @@ import SearchInput from "./SearchInput";
 import NavBar from "./NavBar";
 import styles from "./css/header.module.css";
 import logo from "../images/logo.png";
-import { useAppContext } from "../App";
+import { useAppContext } from "../store/AppContext";
 
 const Header = () => {
   const value = useAppContext()
