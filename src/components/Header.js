@@ -44,7 +44,7 @@ const Header = () => {
               />
               <div>
                 <h5 className={styles.cartText}>Shopping Cart</h5>
-                <p style={{ color: "white" }}>Items ({value.cartQtd}) </p>
+                <p style={{ color: "white" }}>Items ({value.catProducts.length}) </p>
               </div>
             </button>
           </Link>

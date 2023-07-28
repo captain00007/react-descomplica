@@ -6,11 +6,10 @@ import { useAppContext } from "../store/AppContext";
 
 const Card = ({ item, setShowNotif, cart = false }) => {
   const value = useAppContext();
-  const handleClick = (value,item) => {
-    value.setCartQtd(value.cartQtd + 1);
+  const handleClick = (item) => {
     setShowNotif(true);
-    console.log(item);
-    value.dispatch({ type: "setNewProduct", catProducts: item});
+    value.dispatch({ type: "setNewProduct", payload: item});
+    
   };
 
   return (
@@ -26,7 +25,7 @@ const Card = ({ item, setShowNotif, cart = false }) => {
             <h3 className={styles.cardTitle}>${item.price}</h3>
             <Button
               className={styles.cardButton}
-              onClick={() => handleClick(value,item)}
+              onClick={() => handleClick(item)}
             >
               Add to cart
             </Button>

@@ -1,12 +1,6 @@
 import { useState, createContext, useContext } from "react";
 import { useEffect, useReducer } from "react";
-import {
-  getAllProduct,
-  getCartProduct,
-  saveCartProduct,
-} from "../services/ProductService";
-import Image7 from "../images/product_7.jpg";
-import Image8 from "../images/product_8.jpg";
+import { getAllProduct, getCartProduct } from "../services/ProductService";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -14,7 +8,7 @@ const reducer = (state, action) => {
       return state.map((e) => {
         console.log(e.id);
         if (e.id !== action.id) {
-          return { ...e };
+          return e;
         }
       });
     case "qtdPlus":
@@ -34,10 +28,9 @@ const reducer = (state, action) => {
         }
       });
     case "setProduct":
-      return (state = [...action.catProducts]);
+      return action.payload;
     case "setNewProduct":
-      /* console.log(action.catProducts) */
-      return (state.push(action.catProducts));
+      return [...state, action.payload];
     default:
       return state;
   }
@@ -68,18 +61,17 @@ const Context = createContext();
 export const useAppContext = () => useContext(Context);
 
 const AppContext = ({ children }) => {
-  const [cartQtd, setCartQtd] = useState(0);
   const [allProducts, setAllProducts] = useState([]);
   const [catProducts, dispatch] = useReducer(reducer, []);
 
   useEffect(() => {
     setAllProducts(getAllProduct());
-    dispatch({ type: "setProduct", catProducts: getCartProduct() });
+    dispatch({ type: "setProduct", payload: getCartProduct() });
   }, []);
 
   return (
     <Context.Provider
-      value={{ allProducts, catProducts, dispatch, cartQtd, setCartQtd }}
+      value={{ allProducts, catProducts, dispatch }}
     >
       {children}
     </Context.Provider>

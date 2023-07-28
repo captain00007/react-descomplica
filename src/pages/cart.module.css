@@ -5,3 +5,45 @@
 .teste{
     display: flex;
 }
+
+.cartPurchase{
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cartPurchase button{
+    margin-bottom: 2.5rem;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    background-color: #fa4251;
+    height: 2.2rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+}
+.teste1{
+    margin-top: 1.5rem;
+    border: 1px solid red;
+    text-align: end;
+}
+
+.emptyCart{
+    color: white;
+    text-align: center;
+}
+
+.emptyCart p{
+    font-weight: 700;
+}
+
+.emptyCart button {
+    margin-bottom: 2.5rem;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    background-color: #fa4251;
+    height: 3.2rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+}

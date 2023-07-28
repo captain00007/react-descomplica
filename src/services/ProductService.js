@@ -13,61 +13,61 @@ const allProducts = [
     image: Image1,
     text: "New LCDScreen and HD Vide..",
     price: 120,
-    color: ["#fa4251", "#fa4251", "#fa4251", "#fa4251", "#fffff"],
+    color: ["#fa4251", "#fa4251", "#fa4251", "#fff", "#fff"],
   },
   {
     id: 2,
     image: Image2,
     text: "New LCDScreen and HD Vide..",
     price: 220,
-    color: ["#fa4251", "#fa4251", "#fa4251", "#fa4251", "#fffff"],
+    color: ["#fa4251", "#fa4251", "#fa4251", "#fa4251", "#fff"],
   },
   {
     id: 3,
     image: Image3,
     text: "New LCDScreen and HD Vide..",
     price: 450,
-    color: ["#fa4251", "#fa4251", "#fa4251", "#fa4251", "#fffff"],
+    color: ["#fa4251", "#fa4251", "#fa4251", "#fa4251", "#fff"],
   },
   {
     id: 4,
     image: Image4,
     text: "New LCDScreen and HD Vide..",
     price: 320,
-    color: ["#fa4251", "#fa4251", "#fa4251", "#fa4251", "#fffff"],
+    color: ["#fa4251", "#fa4251", "#fa4251", "#fff", "#fff"],
   },
   {
     id: 5,
     image: Image5,
     text: "New LCDScreen and HD Vide..",
     price: 510,
-    color: ["#fa4251", "#fa4251", "#fa4251", "#fa4251", "#fffff"],
+    color: ["#fa4251", "#fa4251", "#fa4251", "#fa4251", "#fff"],
   },
   {
     id: 6,
     image: Image6,
     text: "New LCDScreen and HD Vide..",
     price: 320,
-    color: ["#fa4251", "#fa4251", "#fa4251", "#fa4251", "#fffff"],
+    color: ["#fa4251", "#fa4251", "#fa4251", "#fff", "#fff"],
   },
   {
     id: 7,
     image: Image7,
     text: "New LCDScreen and HD Vide..",
     price: 470,
-    color: ["#fa4251", "#fa4251", "#fa4251", "#fa4251", "#fffff"],
+    color: ["#fa4251", "#fa4251", "#fa4251", "#fa4251", "#fff"],
   },
   {
     id: 8,
     image: Image8,
     text: "New LCDScreen and HD Vide..",
     price: 320,
-    color: ["#fa4251", "#fa4251", "#fa4251", "#fa4251", "#fffff"],
+    color: ["#fa4251", "#fa4251", "#fa4251", "#fa4251", "#fff"],
   },
 ];
 
-export const saveCartProduct = async (product) => {
-  const products = await getCartProduct();
+export const saveCartProduct = async (products) => {
+  /* const products = await getCartProduct();
   const newProduct = {
     id: 1,
     image: product.image,
@@ -76,7 +76,7 @@ export const saveCartProduct = async (product) => {
     color: [...product.color],
     qtd: product.qtd,
   };
-  products.push(newProduct);
+  products.push(newProduct); */
   localStorage.setItem("products", JSON.stringify(products));
 };
 
