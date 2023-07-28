@@ -5,20 +5,17 @@ import {
   getCartProduct,
   saveCartProduct,
 } from "../services/ProductService";
-
-const allCartProducts = getCartProduct();
+import Image7 from "../images/product_7.jpg";
+import Image8 from "../images/product_8.jpg";
 
 const reducer = (state, action) => {
-  return state;
-};
-
-const catReducer = (state, action) => {
   switch (action.type) {
     case "remove":
       return state.map((e) => {
+        console.log(e.id);
         if (e.id !== action.id) {
-          return { ...e};
-        } 
+          return { ...e };
+        }
       });
     case "qtdPlus":
       return state.map((e) => {
@@ -36,22 +33,54 @@ const catReducer = (state, action) => {
           return e;
         }
       });
+    case "setProduct":
+      return (state = [...action.catProducts]);
+    case "setNewProduct":
+      /* console.log(action.catProducts) */
+      return (state.push(action.catProducts));
     default:
       return state;
   }
 };
 
+/* const allCartProducts = [
+  {
+    id: 1,
+    image: Image7,
+    text: "New LCDScreen and HD Vide..",
+    price: 120,
+    color: ["#fa4251", "#fa4251", "#fa4251", "#fa4251", "#fffff"],
+    qtd: 1,
+  },
+  {
+    id: 8,
+    image: Image8,
+    text: "New LCDScreen and HD Vide..",
+    price: 320,
+    color: ["#fa4251", "#fa4251", "#fa4251", "#fa4251", "#fffff"],
+    qtd: 1,
+  },
+];
+
+localStorage.setItem("products", JSON.stringify(allCartProducts)) */
+
 const Context = createContext();
 export const useAppContext = () => useContext(Context);
 
-const AppContext = ({ children, allProducts, allCartProducts }) => {
+const AppContext = ({ children }) => {
   const [cartQtd, setCartQtd] = useState(0);
+  const [allProducts, setAllProducts] = useState([]);
+  const [catProducts, dispatch] = useReducer(reducer, []);
 
-  const [products, dispatch] = useReducer(reducer, allProducts);
-  const [catProducts, catDispatch] = useReducer(catReducer, allCartProducts);
+  useEffect(() => {
+    setAllProducts(getAllProduct());
+    dispatch({ type: "setProduct", catProducts: getCartProduct() });
+  }, []);
 
   return (
-    <Context.Provider value={{ products, catProducts, catDispatch, cartQtd, setCartQtd }}>
+    <Context.Provider
+      value={{ allProducts, catProducts, dispatch, cartQtd, setCartQtd }}
+    >
       {children}
     </Context.Provider>
   );

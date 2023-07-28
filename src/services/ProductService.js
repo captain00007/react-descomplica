@@ -40,7 +40,7 @@ const allProducts = [
     id: 5,
     image: Image5,
     text: "New LCDScreen and HD Vide..",
-    price: 520,
+    price: 510,
     color: ["#fa4251", "#fa4251", "#fa4251", "#fa4251", "#fffff"],
   },
   {
@@ -54,7 +54,7 @@ const allProducts = [
     id: 7,
     image: Image7,
     text: "New LCDScreen and HD Vide..",
-    price: 320,
+    price: 470,
     color: ["#fa4251", "#fa4251", "#fa4251", "#fa4251", "#fffff"],
   },
   {
@@ -80,7 +80,7 @@ export const saveCartProduct = async (product) => {
   localStorage.setItem("products", JSON.stringify(products));
 };
 
-export const getCartProduct = async () => {
+export const getCartProduct = () => {
   return JSON.parse(localStorage.getItem("products")) || [];
 };
 

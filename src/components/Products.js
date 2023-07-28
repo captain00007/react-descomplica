@@ -10,7 +10,7 @@ import { useAppContext } from "../store/AppContext";
 const Products = () => {
   const [showNotif, setShowNotif] = useState(false);
   const items = useAppContext();
-  const products = items.products;
+  const products = items.allProducts;
   return (
     <>
       {showNotif && (
@@ -32,7 +32,7 @@ const Products = () => {
           <Row>
             {products.map((e) => (
               <Col sm={6} lg={3} className={styles.col} key={e.id}>
-                <Card items={e} setShowNotif={setShowNotif} />
+                <Card item={e} setShowNotif={setShowNotif} />
               </Col>
             ))}
           </Row>
