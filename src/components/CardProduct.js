@@ -27,7 +27,7 @@ const Card = ({ items, setShowNotif, cart = false }) => {
               onClick={() => handleClick(value)}
             >
               Add to cart
-            </Button>{" "}
+            </Button>
           </>
         )}
       </CardBS.Body>

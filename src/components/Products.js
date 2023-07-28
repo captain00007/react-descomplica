@@ -5,39 +5,12 @@ import Alert from "react-bootstrap/Alert";
 import Card from "./CardProduct";
 import { useState } from "react";
 import styles from "./css/products.module.css";
-import Image1 from "../images/product_1.jpg";
-import Image2 from "../images/product_2.jpg";
-import Image3 from "../images/product_3.jpg";
-import Image4 from "../images/product_4.jpg";
+import { useAppContext } from "../store/AppContext";
 
 const Products = () => {
   const [showNotif, setShowNotif] = useState(false);
-  const items = [
-    {
-      image: Image1,
-      text: "New LCDScreen and HD Vide..",
-      price: 120,
-      color: ["#fa4251", "#fa4251", "#fa4251", "#fa4251", "#fffff"],
-    },
-    {
-      image: Image2,
-      text: "New LCDScreen and HD Vide..",
-      price: 220,
-      color: ["#fa4251", "#fa4251", "#fa4251", "#fa4251", "#fffff"],
-    },
-    {
-      image: Image3,
-      text: "New LCDScreen and HD Vide..",
-      price: 450,
-      color: ["#fa4251", "#fa4251", "#fa4251", "#fa4251", "#fffff"],
-    },
-    {
-      image: Image4,
-      text: "New LCDScreen and HD Vide..",
-      price: 320,
-      color: ["#fa4251", "#fa4251", "#fa4251", "#fa4251", "#fffff"],
-    },
-  ];
+  const items = useAppContext();
+  const products = items.products;
   return (
     <>
       {showNotif && (
@@ -57,8 +30,8 @@ const Products = () => {
         <hr />
         <Container>
           <Row>
-            {items.map((e, index) => (
-              <Col sm={6} lg={3} className={styles.col} key={index}>
+            {products.map((e) => (
+              <Col sm={6} lg={3} className={styles.col} key={e.id}>
                 <Card items={e} setShowNotif={setShowNotif} />
               </Col>
             ))}
