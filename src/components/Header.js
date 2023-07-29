@@ -13,11 +13,11 @@ import { useAppContext } from "../store/AppContext";
 const Header = () => {
   const value = useAppContext()
   const links = [
-    { label: "Home", link: "#" },
-    { label: "Products", link: "#products" },
-    { label: "About us", link: "#about" },
-    { label: "Our team", link: "#team" },
-    { label: "Contact us", link: "#contact" },
+    { label: "Home", link: "/" },
+    { label: "Products", link: "my_products" },
+    { label: "About us", link: "/" },
+    { label: "Our team", link: "/" },
+    { label: "Contact us", link: "/" },
   ];
 
   return (
@@ -44,7 +44,7 @@ const Header = () => {
               />
               <div>
                 <h5 className={styles.cartText}>Shopping Cart</h5>
-                <p style={{ color: "white" }}>Items ({value.catProducts.length}) </p>
+                <p style={{ color: "white" }}>Items ({value.qtd}) </p>
               </div>
             </button>
           </Link>

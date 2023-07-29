@@ -2,15 +2,20 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Alert from "react-bootstrap/Alert";
-import Card from "./CardProduct";
+import Card from "../components/CardProduct";
 import { useState } from "react";
-import styles from "./css/products.module.css";
+import styles from "./products.module.css";
 import { useAppContext } from "../store/AppContext";
 
-const Products = () => {
+const Products = ({ featured = false }) => {
   const [showNotif, setShowNotif] = useState(false);
   const items = useAppContext();
-  const products = items.allProducts;
+  var products;
+  if (featured) {
+    products = items.allProducts.filter((e) => e.price < 400);
+  } else {
+    products = items.allProducts;
+  }
   return (
     <>
       {showNotif && (
@@ -26,7 +31,7 @@ const Products = () => {
       )}
 
       <Container className={styles.productsWrapper}>
-        <h2 className={styles.productsTitle}>Products</h2>
+        <h2 className={styles.productsTitle}>{ featured ? "Featured products" : "All products"}</h2>
         <hr />
         <Container>
           <Row>

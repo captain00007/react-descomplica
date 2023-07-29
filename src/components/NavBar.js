@@ -1,6 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import NavBarBS from "react-bootstrap/Navbar";
+import { Link } from "react-router-dom";
 import styles from "./css/navBar.module.css";
 
 const NavBar = ({ items = []}) => {
@@ -16,9 +17,9 @@ const NavBar = ({ items = []}) => {
           >
             <Nav className={styles.navLinkWrapper}>
               {items.map((e, id) => (
-                <Nav.Link key={id} href={e.link}>
+                <Link className="nav-link" to={e.link} key={id}>
                   {e.label}
-                </Nav.Link>
+                </Link>
               ))}
             </Nav>
           </NavBarBS.Collapse>

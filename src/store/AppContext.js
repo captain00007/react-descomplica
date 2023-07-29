@@ -36,42 +36,35 @@ const reducer = (state, action) => {
   }
 };
 
-/* const allCartProducts = [
-  {
-    id: 1,
-    image: Image7,
-    text: "New LCDScreen and HD Vide..",
-    price: 120,
-    color: ["#fa4251", "#fa4251", "#fa4251", "#fa4251", "#fffff"],
-    qtd: 1,
-  },
-  {
-    id: 8,
-    image: Image8,
-    text: "New LCDScreen and HD Vide..",
-    price: 320,
-    color: ["#fa4251", "#fa4251", "#fa4251", "#fa4251", "#fffff"],
-    qtd: 1,
-  },
-];
-
-localStorage.setItem("products", JSON.stringify(allCartProducts)) */
-
 const Context = createContext();
 export const useAppContext = () => useContext(Context);
 
 const AppContext = ({ children }) => {
   const [allProducts, setAllProducts] = useState([]);
   const [catProducts, dispatch] = useReducer(reducer, []);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [qtd, setQtd] = useState(0);
 
   useEffect(() => {
     setAllProducts(getAllProduct());
     dispatch({ type: "setProduct", payload: getCartProduct() });
   }, []);
 
+  useEffect(() => {
+    const qtdItems = catProducts.reduce((total, e) => {
+      return total + e.qtd;
+    }, 0);
+    setQtd(qtdItems);
+
+    const totalPrice = catProducts.reduce((total, e) => {
+      return total + e.price * e.qtd;
+    }, 0);
+    setTotalPrice(totalPrice);
+  }, [catProducts]);
+
   return (
     <Context.Provider
-      value={{ allProducts, catProducts, dispatch }}
+      value={{ allProducts, catProducts, dispatch, qtd, totalPrice }}
     >
       {children}
     </Context.Provider>

@@ -6,8 +6,10 @@
     display: flex;
 }
 
+.trashButton{
+    border: none;
+}
 .price{
-    color: white;
     font-weight: 600; 
 }
 
@@ -22,7 +24,6 @@
 }
 
 .teste p {
-    color: white;
     font-weight: 600;
 }
 
@@ -50,7 +51,7 @@
 }
 
 .teste5{
-    background-color: rgb(2, 3, 3)
+    /* background-color: rgb(2, 3, 3) */
 }
 .emptyCart {
     color: white;

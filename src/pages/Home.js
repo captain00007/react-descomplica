@@ -2,7 +2,7 @@ import Container from "react-bootstrap/Container";
 import Carousel from "../components/Carousel";
 import Image1 from "../images/banner_1.jpg";
 import Image2 from "../images/banner_2.jpg";
-import Products from "../components/Products"
+import Products from "./Products"
 import About from "../components/About";
 import Team from "../components/Team";
 
@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <Container>
       <Carousel items={images} />
-      <Products/>
+      <Products featured={true}/>
       <About/>
       <Team/>
     </Container>
