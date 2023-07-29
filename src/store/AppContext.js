@@ -5,15 +5,11 @@ import { getAllProduct, getCartProduct } from "../services/ProductService";
 const reducer = (state, action) => {
   switch (action.type) {
     case "remove":
-      return state.map((e) => {
-        console.log(e.id);
-        if (e.id !== action.id) {
-          return e;
-        }
-      });
+      return state.filter((e) => e.id !== action.payload);
+
     case "qtdPlus":
       return state.map((e) => {
-        if (e.id === action.id) {
+        if (e.id === action.payload) {
           return { ...e, qtd: e.qtd + 1 };
         } else {
           return e;
@@ -21,7 +17,7 @@ const reducer = (state, action) => {
       });
     case "qtdMinus":
       return state.map((e) => {
-        if (e.id === action.id) {
+        if (e.id === action.payload) {
           return { ...e, qtd: e.qtd - 1 };
         } else {
           return e;

@@ -15,15 +15,20 @@ const Cart = () => {
   const cartProducts = items.catProducts;
 
   const handleClickMinus = (e) => {
-    items.dispatch({ type: "qtdMinus", id: e.id });
+    if(e.qtd >= 2)
+    {
+      items.dispatch({ type: "qtdMinus", payload: e.id });
+    }
+    
   };
 
   const handleClickPlus = (e) => {
-    items.dispatch({ type: "qtdPlus", id: e.id });
+    items.dispatch({ type: "qtdPlus", payload: e.id });
   };
 
   const handleClick = (e) => {
-    items.dispatch({ type: "remove", id: e.id });
+    items.dispatch({ type: "remove", payload: e.id });
+    
   };
 
   const handleClickSave = (cartProducts) => {
@@ -55,7 +60,10 @@ const Cart = () => {
                         </div>
                       </Col>
                       <Col>
-                        <button className={styles.trashButton} onClick={() => handleClick(e)}>
+                        <button
+                          className={styles.trashButton}
+                          onClick={() => handleClick(e)}
+                        >
                           <FontAwesomeIcon icon={faTrash} />
                         </button>
                       </Col>
