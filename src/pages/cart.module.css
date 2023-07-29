@@ -1,18 +1,38 @@
-.cartWrapper{
+.cartWrapper {
     color: white;
 }
 
-.teste{
+.teste {
     display: flex;
 }
 
-.cartPurchase{
+.price{
+    color: white;
+    font-weight: 600; 
+}
+
+.teste button {
+    color: white;
+    border: none;
+    background-color: #fa4251;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    margin: 0 0.5rem 0 0.5rem;
+}
+
+.teste p {
+    color: white;
+    font-weight: 600;
+}
+
+.cartPurchase {
     margin-top: 1.5rem;
     display: flex;
     justify-content: space-between;
 }
 
-.cartPurchase button{
+.cartPurchase button {
     margin-bottom: 2.5rem;
     color: white;
     border: none;
@@ -22,18 +42,22 @@
     padding-left: 0.3rem;
     padding-right: 0.3rem;
 }
-.teste1{
+
+.teste1 {
     margin-top: 1.5rem;
     border: 1px solid red;
     text-align: end;
 }
 
-.emptyCart{
+.teste5{
+    background-color: rgb(2, 3, 3)
+}
+.emptyCart {
     color: white;
     text-align: center;
 }
 
-.emptyCart p{
+.emptyCart p {
     font-weight: 700;
 }
 

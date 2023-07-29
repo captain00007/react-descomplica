@@ -1,19 +1,21 @@
-import Button from "react-bootstrap/Button";
 import CardBS from "react-bootstrap/Card";
 import Star from "./Star";
 import styles from "./css/cardProduct.module.css";
 import { useAppContext } from "../store/AppContext";
+import Button from "./Button";
 
-const Card = ({ item, setShowNotif, cart = false }) => {
+const Card = ({ item, setShowNotif, cart = false, width }) => {
   const value = useAppContext();
-  const handleClick = (item) => {
+  
+  const handleClick = (item,setDisable) => {
     setShowNotif(true);
-    value.dispatch({ type: "setNewProduct", payload: item});
-    
+    const newItem = {...item, qtd: 1}
+    value.dispatch({ type: "setNewProduct", payload: newItem });
+    setDisable(true);
   };
 
   return (
-    <CardBS style={{ width: "18rem" }} className={styles.cardWrapper}>
+    <CardBS style={{ width: width }} className={styles.cardWrapper}>
       <CardBS.Img variant="top" src={item.image} />
       <CardBS.Body>
         {item.color.map((e, index) => (
@@ -23,12 +25,8 @@ const Card = ({ item, setShowNotif, cart = false }) => {
         {!cart && (
           <>
             <h3 className={styles.cardTitle}>${item.price}</h3>
-            <Button
-              className={styles.cardButton}
-              onClick={() => handleClick(item)}
-            >
-              Add to cart
-            </Button>
+
+            <Button handleClick={handleClick} item={item} ></Button>
           </>
         )}
       </CardBS.Body>

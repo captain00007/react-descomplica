@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import ListGroup from "react-bootstrap/ListGroup";
 import Row from "react-bootstrap/Row";
@@ -15,6 +16,8 @@ const Cart = () => {
   const cartProducts = items.catProducts;
   console.log(cartProducts);
 
+  const [totalPrice, setTotalPrice] =useState(0);
+
   const handleClickMinus = (e) => {
     items.dispatch({ type: "qtdMinus", id: e.id });
   };
@@ -31,6 +34,7 @@ const Cart = () => {
     saveCartProduct(cartProducts)
   };
 
+
   return (
     <>
       {cartProducts.length > 0 ? (
@@ -39,14 +43,14 @@ const Cart = () => {
           <Row>
             {cartProducts.map((e) => (
               <Col sm={12} key={e.id}>
-                <ListGroup>
-                  <ListGroup.Item>
+                <ListGroup variant="flush">
+                  <ListGroup.Item className={styles.teste5}>
                     <Row>
                       <Col>
-                        <Card item={e} cart={true} />
+                        <Card item={e} cart={true} width="8rem" />
                       </Col>
                       <Col>
-                        <p>${e.price * e.qtd}</p>
+                        <p className={styles.price}>${e.price * e.qtd}</p>
                       </Col>
                       <Col>
                         <div className={styles.teste}>
@@ -69,7 +73,7 @@ const Cart = () => {
           <Container>
             <div className={styles.teste1}>
               <h4>Subtotal</h4>
-              <p>${0}</p>
+              <h2>${0}</h2>
             </div>
           </Container>
           <Container className={styles.cartPurchase}>

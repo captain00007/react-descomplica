@@ -32,7 +32,7 @@ const Products = () => {
           <Row>
             {products.map((e) => (
               <Col sm={6} lg={3} className={styles.col} key={e.id}>
-                <Card item={e} setShowNotif={setShowNotif} />
+                <Card item={e} setShowNotif={setShowNotif} width="25rem" />
               </Col>
             ))}
           </Row>

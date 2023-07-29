@@ -18,15 +18,3 @@
     margin-top: 0.5rem;
     color: #9a9a9a;
 }
-
-.cardButton{
-    text-transform: uppercase;
-    margin-top: 0.5rem;
-    background-color: #fa4251;
-    border: none;
-    border-radius: 0;
-}
-
-.cardButton:hover{
-    background-color: #fa4251;
-}

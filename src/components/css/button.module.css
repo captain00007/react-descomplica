@@ -1,0 +1,16 @@
+.cardButton{
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    background-color: #fa4251;
+    border: none;
+    border-radius: 0;
+}
+
+.cardButton:hover {
+    background-color: #fa4251;
+}
+
+.cardDisableButton:disabled{
+    background-color: #6b6a6a;
+    border: none;
+}
