@@ -15,9 +15,8 @@ const Header = () => {
   const links = [
     { label: "Home", link: "/" },
     { label: "Products", link: "my_products" },
-    { label: "About us", link: "/" },
-    { label: "Our team", link: "/" },
-    { label: "Contact us", link: "/" },
+    { label: "About us", link: "about" },
+    { label: "Our team", link: "team" },
   ];
 
   return (

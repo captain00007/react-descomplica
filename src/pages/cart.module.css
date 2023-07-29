@@ -2,18 +2,15 @@
     color: white;
 }
 
-.teste {
+.price {
+    font-weight: 600;
+}
+
+.plusMinusWrapper {
     display: flex;
 }
 
-.trashButton{
-    border: none;
-}
-.price{
-    font-weight: 600; 
-}
-
-.teste button {
+.plusMinusWrapper button {
     color: white;
     border: none;
     background-color: #fa4251;
@@ -23,8 +20,17 @@
     margin: 0 0.5rem 0 0.5rem;
 }
 
-.teste p {
+.plusMinusWrapper p {
     font-weight: 600;
+}
+
+.trashButton {
+    border: none;
+}
+
+.subTotalWrapper {
+    margin-top: 1.5rem;
+    text-align: end;
 }
 
 .cartPurchase {
@@ -44,15 +50,6 @@
     padding-right: 0.3rem;
 }
 
-.teste1 {
-    margin-top: 1.5rem;
-    border: 1px solid red;
-    text-align: end;
-}
-
-.teste5{
-    /* background-color: rgb(2, 3, 3) */
-}
 .emptyCart {
     color: white;
     text-align: center;
@@ -71,4 +68,14 @@
     height: 3.2rem;
     padding-left: 1.3rem;
     padding-right: 1.3rem;
+}
+
+@media screen and (max-width: 576px) {
+    .subTotalWrapper {
+        text-align: center;
+    }
+    .cartPurchase {
+        display: block;
+        text-align: center;
+    }
 }

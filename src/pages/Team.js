@@ -1,12 +1,11 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Card from "./Card";
+import Card from "../components/Card";
 import Image1 from "../images/our_team_1.jpg";
 import Image2 from "../images/our_team_2.jpg";
 import Image3 from "../images/our_team_3.jpg";
-import styles from "./css/team.module.css";
-import Icon from "./Icon";
+import styles from "./team.module.css";
 
 const Team = () => {
   const items = [

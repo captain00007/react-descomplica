@@ -39,16 +39,16 @@ const Cart = () => {
             {cartProducts.map((e) => (
               <Col sm={12} key={e.id}>
                 <ListGroup variant="flush">
-                  <ListGroup.Item className={styles.teste5}>
+                  <ListGroup.Item>
                     <Row>
-                      <Col>
+                      <Col md={6}>
                         <Card item={e} cart={true} width="8rem" />
                       </Col>
                       <Col>
                         <p className={styles.price}>${e.price * e.qtd}</p>
                       </Col>
                       <Col>
-                        <div className={styles.teste}>
+                        <div className={styles.plusMinusWrapper}>
                           <button onClick={() => handleClickMinus(e)}>-</button>
                           <p>{e.qtd}</p>
                           <button onClick={() => handleClickPlus(e)}>+</button>
@@ -66,7 +66,7 @@ const Cart = () => {
             ))}
           </Row>
           <Container>
-            <div className={styles.teste1}>
+            <div className={styles.subTotalWrapper}>
               <h4>Subtotal</h4>
               <h2>${items.totalPrice}</h2>
             </div>

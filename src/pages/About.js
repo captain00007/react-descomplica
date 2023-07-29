@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import ImageAbout from "../images/about_us.jpg";
-import Card from "./Card";
-import styles from "./css/about.module.css"
+import Card from "../components/Card";
+import styles from "./about.module.css"
 
 const About = () => {
   const items = {
