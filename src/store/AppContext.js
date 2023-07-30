@@ -40,6 +40,7 @@ const AppContext = ({ children }) => {
   const [catProducts, dispatch] = useReducer(reducer, []);
   const [totalPrice, setTotalPrice] = useState(0);
   const [qtd, setQtd] = useState(0);
+  const [button, setButton] = useState([]);
 
   useEffect(() => {
     setAllProducts(getAllProduct());
@@ -56,11 +57,12 @@ const AppContext = ({ children }) => {
       return total + e.price * e.qtd;
     }, 0);
     setTotalPrice(totalPrice);
+    
   }, [catProducts]);
 
   return (
     <Context.Provider
-      value={{ allProducts, catProducts, dispatch, qtd, totalPrice }}
+      value={{ allProducts, catProducts, dispatch, qtd, totalPrice ,button, setButton}}
     >
       {children}
     </Context.Provider>

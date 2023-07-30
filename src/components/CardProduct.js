@@ -11,6 +11,7 @@ const Card = ({ item, setShowNotif, cart = false, width }) => {
     setShowNotif(true);
     const newItem = {...item, qtd: 1}
     value.dispatch({ type: "setNewProduct", payload: newItem });
+    value.setButton([...value.button,item.id])
     setDisable(true);
   };
 

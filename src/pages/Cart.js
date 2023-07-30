@@ -9,17 +9,18 @@ import { Link } from "react-router-dom";
 import styles from "./cart.module.css";
 import { useAppContext } from "../store/AppContext";
 import { saveCartProduct } from "../services/ProductService";
+import { useState } from "react";
+import Alert from "react-bootstrap/Alert";
 
 const Cart = () => {
+  const [showNotif, setShowNotif] = useState(false);
   const items = useAppContext();
   const cartProducts = items.catProducts;
 
   const handleClickMinus = (e) => {
-    if(e.qtd >= 2)
-    {
+    if (e.qtd >= 2) {
       items.dispatch({ type: "qtdMinus", payload: e.id });
     }
-    
   };
 
   const handleClickPlus = (e) => {
@@ -28,15 +29,27 @@ const Cart = () => {
 
   const handleClick = (e) => {
     items.dispatch({ type: "remove", payload: e.id });
-    
+    items.setButton(items.button.filter((el) => e.id !== el));
   };
 
   const handleClickSave = (cartProducts) => {
     saveCartProduct(cartProducts);
+    setShowNotif(true);
   };
 
   return (
     <>
+      {showNotif && (
+        <Container className={styles.notificationWrapper}>
+          <Alert
+            variant="succes"
+            onClose={() => setShowNotif(false)}
+            dismissible
+          >
+            <p>Product purchased succesfully</p>
+          </Alert>
+        </Container>
+      )}
       {cartProducts.length > 0 ? (
         <Container className={styles.cartWrapper}>
           <h1>My purchases</h1>

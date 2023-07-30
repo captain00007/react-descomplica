@@ -33,7 +33,7 @@ const allProducts = [
     id: 4,
     image: Image4,
     text: "New LCDScreen and HD Vide..",
-    price: 320,
+    price: 450,
     color: ["#fa4251", "#fa4251", "#fa4251", "#fff", "#fff"],
   },
   {
