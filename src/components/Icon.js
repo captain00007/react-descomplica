@@ -8,7 +8,7 @@ const Icon = () => {
     <Container style={{padding: 0}} >
       <Row>
         <Col>
-          <a href="#">
+          <a href="https://www.linkedin.com/in/georges-guy-gustinvil-2a30bb56/">
             <div className={styles.iconWrapper}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@ const Icon = () => {
           </a>
         </Col>
         <Col>
-          <a href="#">
+          <a href="https://github.com/captain00007/react-descomplica">
             <div className={styles.iconWrapper}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +34,7 @@ const Icon = () => {
           </a>
         </Col>
         <Col>
-          <a href="#">
+          <a href="https://github.com/captain00007/react-descomplica">
             <div className={styles.iconWrapper}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@ const Icon = () => {
           </a>
         </Col>
         <Col className={styles.col}>
-          <a href="#">
+          <a href="https://www.linkedin.com/in/georges-guy-gustinvil-2a30bb56/">
             <div className={styles.iconWrapper}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
