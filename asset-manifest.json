@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/react-descomplica/static/css/main.5adf2ea4.css",
+    "main.js": "/react-descomplica/static/js/main.b725b4d8.js",
+    "static/media/product_8.jpg": "/react-descomplica/static/media/product_8.af613cd86201152169db.jpg",
+    "static/media/product_7.jpg": "/react-descomplica/static/media/product_7.97ee04ff8bbf1b39153b.jpg",
+    "static/media/product_5.jpg": "/react-descomplica/static/media/product_5.2e041f2cb3333b8fedf8.jpg",
+    "static/media/product_3.jpg": "/react-descomplica/static/media/product_3.5ea53dff4b687f514c71.jpg",
+    "static/media/product_6.jpg": "/react-descomplica/static/media/product_6.3d6adc8c086ee0054cc1.jpg",
+    "static/media/product_1.jpg": "/react-descomplica/static/media/product_1.715d78eac392300467b5.jpg",
+    "static/media/product_2.jpg": "/react-descomplica/static/media/product_2.705aff61f120688788cb.jpg",
+    "static/media/product_4.jpg": "/react-descomplica/static/media/product_4.9a104825cf24243f0a11.jpg",
+    "static/media/our_team_1.jpg": "/react-descomplica/static/media/our_team_1.d721bbd66237ffa9bb80.jpg",
+    "static/media/banner_1.jpg": "/react-descomplica/static/media/banner_1.02df5b7eb0e40ac07c75.jpg",
+    "static/media/about_us.jpg": "/react-descomplica/static/media/about_us.551b4553f5ec3e482e5a.jpg",
+    "static/media/banner_2.jpg": "/react-descomplica/static/media/banner_2.01f8bb80c113e5f16fea.jpg",
+    "static/media/our_team_2.jpg": "/react-descomplica/static/media/our_team_2.28dd3aaaa6a011f666b9.jpg",
+    "static/media/our_team_3.jpg": "/react-descomplica/static/media/our_team_3.7c8c2c52cf7aad5ed2a3.jpg",
+    "index.html": "/react-descomplica/index.html",
+    "main.5adf2ea4.css.map": "/react-descomplica/static/css/main.5adf2ea4.css.map",
+    "main.b725b4d8.js.map": "/react-descomplica/static/js/main.b725b4d8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5adf2ea4.css",
+    "static/js/main.b725b4d8.js"
+  ]
+}
